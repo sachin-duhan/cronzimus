@@ -1,8 +1,8 @@
 FROM python:3.10-slim
 
-LABEL maintainer="Sachin duhan <sachin.duhan@eulermotors.com>"
+LABEL maintainer="Sachin duhan <duhan.sachin126@gmail.com>"
 
-ENV environment=prod
+ENV environment=production
 ENV APP_PATH=/usr/src/app 
 ENV user=root
 
