@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: make-test
+        name: Run make test
+        entry: make test
+        language: system
+        types: [python]

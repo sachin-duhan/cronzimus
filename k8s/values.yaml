@@ -1,0 +1,19 @@
+env:
+  name: env
+  value: prod
+
+cronzimusresources:
+  resources:
+    requests:
+      cpu: "1"
+      memory: "1Gi"
+    limits:
+      cpu: "2"
+      memory: "8Gi"
+
+livenessProbe:
+  delaysec: 30
+  periodsec: 10
+  timeoutSeconds: 10
+  successThreshold: 1
+  failureThreshold: 3

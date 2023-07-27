@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cronzimus-deployment
+  labels:
+    name: cronzimus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: cronzimus
+  template:
+    metadata:
+      labels:
+        name: cronzimus
+    spec:
+      nodeSelector:
+        app-cronzimus: 'true'
+      containers:
+      - name: cronzimus
+        image: {{ .Values.image }}
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
+        env:
+        - name: env
+          value: {{ .Values.env }}
+        resources:
+          requests:
+            cpu: "1"
+            memory: "1Gi"
+          limits:
+            cpu: "2"
+            memory: "8Gi"
+        ports:
+        - containerPort: 8080

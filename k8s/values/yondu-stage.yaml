@@ -1,0 +1,10 @@
+image: 007904105455.dkr.ecr.ap-south-1.amazonaws.com/cronzimus-stage:latest
+env: stage
+imagePullPolicy: Always
+
+livenessProbe:
+  delaysec: 30
+  periodsec: 10
+  timeoutSeconds: 10
+  successThreshold: 1
+  failureThreshold: 3

@@ -1,0 +1,8 @@
+apiVersion: v1
+description: For managing ad-hoc jobs.
+name: cronzimus
+version: "0.1"
+# home: http://eulerlogistics.com
+maintainers:
+  - name: Sachin duhan
+    email: sachin.duhan@eulermotors.com

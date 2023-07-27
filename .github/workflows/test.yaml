@@ -1,0 +1,30 @@
+name: Run tests on push
+
+on:
+  push:
+    branches:
+      - "master"
+      - "main"
+      - "production"
+      - "staging"
+      - "beta"
+      # or whatever branch you want to trigger the action on
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # or another operating system of your choice
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # or another version of Python that you need
+
+      - name: Install dependencies
+        run: make install  # or another command to install your dependencies
+
+      - name: Run tests with pytest
+        run: make test  # or another command to run your tests with pytest
